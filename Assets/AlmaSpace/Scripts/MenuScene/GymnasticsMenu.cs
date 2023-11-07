@@ -4,21 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using AlmaSpace;
 using System.Collections.Generic;
-using System.Collections;
-using System;
-using UnityEngine.Networking;
-using UnityEngine.Android;
 
 public class GymnasticsMenu : MonoBehaviour
 {
-
-
     [SerializeField] private Button[] _buttonsJuniorGroup;
     [SerializeField] private Button[] _buttonsSeniorGroup;
     [SerializeField] private string[] _nameFileJuniorForAndroid;
     [SerializeField] private string[] _nameFileSeniorForAndroid;
 
-    private string _pathToVideo = Application.streamingAssetsPath + "/" + "Video/";
+    private string _pathToVideo = Application.streamingAssetsPath + "/" + "GymnasticsData" + "/" + "Video" + "/";
     private const string _juniorGroup = "JuniorGroup";
     private const string _seniorGroup = "SeniorGroup";
 
@@ -78,29 +72,42 @@ public class GymnasticsMenu : MonoBehaviour
 
     private string[] GetCountVideoFiles(string folder, string[] androidFileName = null)
     {
+        string[] videoFiles = Directory.GetFiles(_pathToVideo + folder, "*.mp4", SearchOption.AllDirectories);
+
         if (Application.platform == RuntimePlatform.Android)
         {
-            var checkFormats = new[] { ".mp4" };
-            var videosPaths = new List<string>();
-            var androidPath = Path.Combine(_pathToVideo, folder);
+            //var checkFormats = new[] { ".mp4" };
+            //var videosPaths = new List<string>();
+            //var androidPath = Path.Combine(_pathToVideo, folder);
 
-            foreach (var file in androidFileName)
+            //foreach (var file in androidFileName)
+            //{
+            //    videosPaths.Add(Path.Combine(androidPath, file.TrimEnd() + ".mp4"));
+            //}
+
+            //return videosPaths.ToArray();
+
+            List<string> videoPaths = new List<string>();
+
+            foreach (string file in videoFiles)
             {
-                videosPaths.Add(Path.Combine(androidPath, file.TrimEnd() + ".mp4"));
+                string relativePath = "jar:file://" + Application.dataPath + "!/assets/" + folder;
+                string path = file.Replace(relativePath, "").Replace('\\', '/');
+                videoPaths.Add(path);
             }
 
-            return videosPaths.ToArray();
+            return videoPaths.ToArray();
         }
         else
         {
-            var checkFormats = new[] { ".mp4" };
+            //var checkFormats = new[] { ".mp4" };
 
-            var countFiles = Directory
-                .GetFiles(_pathToVideo + folder)
-                .Where(file => checkFormats.Any(file.ToLower().EndsWith))
-                .ToArray();
+            //var countFiles = Directory
+            //    .GetFiles(_pathToVideo + folder)
+            //    .Where(file => checkFormats.Any(file.ToLower().EndsWith))
+            //    .ToArray();
 
-            return countFiles;
+            return videoFiles;
         }
     }
 }

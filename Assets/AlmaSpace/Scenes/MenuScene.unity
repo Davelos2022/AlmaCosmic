@@ -2086,6 +2086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 574602974}
   - component: {fileID: 574602975}
+  - component: {fileID: 574602976}
   m_Layer: 5
   m_Name: '[SPACE_MANEGER]'
   m_TagString: Untagged
@@ -2122,6 +2123,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneController: {fileID: 1221662511}
   _audioManager: {fileID: 1742438018}
+--- !u!114 &574602976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574602971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a767d2e397779644b901926ec57eaa9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &590486851
 GameObject:
   m_ObjectHideFlags: 0
@@ -5536,7 +5549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6117647}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.45882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

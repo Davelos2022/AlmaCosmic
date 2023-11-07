@@ -19,6 +19,7 @@ public class VideoViewer : MonoBehaviour
     [SerializeField] private GameObject _endScreen;
     [SerializeField] private Button _replay;
     [SerializeField] private Button _nextVideo;
+    [SerializeField] private Button _exitToMenu;
 
     private bool _isPaused;
     private string _currentPathVideo;
@@ -29,6 +30,7 @@ public class VideoViewer : MonoBehaviour
         _closeButton.onClick.AddListener(Closed);
         _replay.onClick.AddListener(Replay);
         _nextVideo.onClick.AddListener(NextVideo);
+        _exitToMenu.onClick.AddListener(Closed);
 
         _videoPlayer.loopPointReached += OnVideoEnd;
         _currentPathVideo = AlmaSpaceManager.Instance.CurrentVideo;
@@ -42,6 +44,7 @@ public class VideoViewer : MonoBehaviour
         _closeButton.onClick.RemoveListener(Closed);
         _replay.onClick.RemoveListener(Replay);
         _nextVideo.onClick.RemoveListener(NextVideo);
+        _exitToMenu.onClick.RemoveListener(Closed);
 
         _videoPlayer.loopPointReached -= OnVideoEnd;
     }
@@ -123,7 +126,7 @@ public class VideoViewer : MonoBehaviour
 
         float fadeDuration = 1.0f;
         float alphaFade = 1.0f;
-        float duration = 0.020f;
+        float duration = 0.5f;
 
         Color newColor = _fade.color;
         newColor.a = alphaFade;
