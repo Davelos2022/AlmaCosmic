@@ -3,11 +3,20 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using AlmaSpace;
+using System.Collections.Generic;
+using System.Collections;
+using System;
+using UnityEngine.Networking;
+using UnityEngine.Android;
 
 public class GymnasticsMenu : MonoBehaviour
 {
+
+
     [SerializeField] private Button[] _buttonsJuniorGroup;
     [SerializeField] private Button[] _buttonsSeniorGroup;
+    [SerializeField] private string[] _nameFileJuniorForAndroid;
+    [SerializeField] private string[] _nameFileSeniorForAndroid;
 
     private string _pathToVideo = Application.streamingAssetsPath + "/" + "Video/";
     private const string _juniorGroup = "JuniorGroup";
@@ -18,8 +27,16 @@ public class GymnasticsMenu : MonoBehaviour
 
     private void Start()
     {
-        _videosPathsJunior = GetCountVideoFiles(_juniorGroup);
-        _videosPathsSenior = GetCountVideoFiles(_seniorGroup);
+        if (Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            _videosPathsJunior = GetCountVideoFiles(_juniorGroup);
+            _videosPathsSenior = GetCountVideoFiles(_seniorGroup);
+        }
+        else
+        {
+            _videosPathsJunior = GetCountVideoFiles(_juniorGroup, _nameFileJuniorForAndroid);
+            _videosPathsSenior = GetCountVideoFiles(_seniorGroup, _nameFileSeniorForAndroid);
+        }
 
         InsalizationButton(_buttonsJuniorGroup, _videosPathsJunior);
         InsalizationButton(_buttonsSeniorGroup, _videosPathsSenior);
@@ -59,15 +76,31 @@ public class GymnasticsMenu : MonoBehaviour
         await AlmaSpaceManager.Instance.PlayGymnastics(paths, index);
     }
 
-    private string[] GetCountVideoFiles(string folder)
+    private string[] GetCountVideoFiles(string folder, string[] androidFileName = null)
     {
-        var checkFormats = new[] { ".mp4" };
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            var checkFormats = new[] { ".mp4" };
+            var videosPaths = new List<string>();
+            var androidPath = Path.Combine(_pathToVideo, folder);
 
-        var countFiles = Directory
-            .GetFiles(_pathToVideo + folder)
-            .Where(file => checkFormats.Any(file.ToLower().EndsWith))
-            .ToArray();
+            foreach (var file in androidFileName)
+            {
+                videosPaths.Add(Path.Combine(androidPath, file.TrimEnd() + ".mp4"));
+            }
 
-        return countFiles;
+            return videosPaths.ToArray();
+        }
+        else
+        {
+            var checkFormats = new[] { ".mp4" };
+
+            var countFiles = Directory
+                .GetFiles(_pathToVideo + folder)
+                .Where(file => checkFormats.Any(file.ToLower().EndsWith))
+                .ToArray();
+
+            return countFiles;
+        }
     }
 }

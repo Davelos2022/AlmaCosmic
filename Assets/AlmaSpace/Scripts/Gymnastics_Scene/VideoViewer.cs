@@ -4,6 +4,7 @@ using UnityEngine.Video;
 using UnityEngine.UI;
 using System;
 using AlmaSpace;
+using VolumeBox.Utils;
 
 public class VideoViewer : MonoBehaviour
 {
@@ -69,7 +70,14 @@ public class VideoViewer : MonoBehaviour
 
     private void Closed()
     {
-        AlmaSpaceManager.Instance.ReturnInMenu();
+        AlmaSpaceManager.Instance.ShowMessageBox(new MessageBoxData
+        {
+            HeaderCaption = "Подтвердите действие",
+            MainCaption = "Вы действительно хотите выйти в меню?",
+            CancelCaption = "Отмена",
+            OkCaption = "Да",
+            OkAction = AlmaSpaceManager.Instance.ReturnInMenu
+        });
     }
 
     private void OnVideoEnd(VideoPlayer videoPlayer)
@@ -115,7 +123,7 @@ public class VideoViewer : MonoBehaviour
 
         float fadeDuration = 1.0f;
         float alphaFade = 1.0f;
-        float duration = 0.005f;
+        float duration = 0.020f;
 
         Color newColor = _fade.color;
         newColor.a = alphaFade;

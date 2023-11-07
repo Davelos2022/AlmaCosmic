@@ -125,14 +125,14 @@ public class ScreensController : MonoBehaviour, IDragHandler, IEndDragHandler, I
         RectTransform previousScreen;
         RectTransform nextScreen;
         Vector2 positionScreen;
-        float offset = 20f;
+        float offset = 60f;
 
         for (int x = 1; x < _containerScreen.childCount; x++)
         {
             previousScreen = _containerScreen.GetChild(x - 1).GetComponent<RectTransform>();
             nextScreen = _containerScreen.GetChild(x).GetComponent<RectTransform>();
 
-            positionScreen = new Vector2((previousScreen.anchoredPosition.x + Screen.currentResolution.width) - offset, 0);
+            positionScreen = new Vector2((previousScreen.anchoredPosition.x + Screen.currentResolution.width) + offset, 0);
             nextScreen.anchoredPosition = positionScreen;
             nextScreen.gameObject.SetActive(true);
         }

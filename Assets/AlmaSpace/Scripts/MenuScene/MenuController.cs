@@ -1,10 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using VolumeBox.Utils;
-using UnityEngine.EventSystems;
 using AlmaSpace;
-using System;
+using VolumeBox.Utils;
 
 public class MenuController : MonoBehaviour
 {
@@ -50,13 +48,13 @@ public class MenuController : MonoBehaviour
         {
             _soundButton.interactable = true;
             _textExitButton.text = _textExitApp;
-            _exitButton.onClick.AddListener(MessageBoxForExitApp);
+            _exitButton.onClick.AddListener(ExitApp);
         }
         else
         {
             _soundButton.interactable = false;
             _textExitButton.text = _textExitToMenu;
-            _exitButton.onClick.AddListener(MessageBoxForExitToMenu);
+            _exitButton.onClick.AddListener(ExitToMenu);
         }
     }
 
@@ -66,9 +64,9 @@ public class MenuController : MonoBehaviour
         _animatorControllerMenu.SetBool(_animMenu, false);
 
         if (AlmaSpaceManager.Instance.InMenu)
-            _exitButton.onClick.RemoveListener(MessageBoxForExitApp);
+            _exitButton.onClick.RemoveListener(ExitApp);
         else
-            _exitButton.onClick.RemoveListener(MessageBoxForExitToMenu);
+            _exitButton.onClick.RemoveListener(ExitToMenu);
     }
 
     private void ShowAboutCompany()
@@ -93,36 +91,27 @@ public class MenuController : MonoBehaviour
 
     private void ExitToMenu()
     {
-        AlmaSpaceManager.Instance.ReturnInMenu();
         HideMenu();
-    }
 
-    private void MessageBoxForExitToMenu()
-    {
-        MessageBox.Show(new MessageBoxData
-        {
-            HeaderCaption = "Подтвердите действие",
-            MainCaption = "Вы действительно хотите выйти?",
-            CancelCaption = "Отмена",
-            OkCaption = "Да",
-            OkAction = ExitApp
-        });
-    }
-
-    private void MessageBoxForExitApp()
-    {
-        MessageBox.Show(new MessageBoxData
+        AlmaSpaceManager.Instance.ShowMessageBox(new MessageBoxData
         {
             HeaderCaption = "Подтвердите действие",
             MainCaption = "Вы действительно хотите выйти в меню?",
             CancelCaption = "Отмена",
             OkCaption = "Да",
-            OkAction = ExitToMenu
+            OkAction = AlmaSpaceManager.Instance.ReturnInMenu
         });
     }
 
     private void ExitApp()
     {
-        Application.Quit();
+        AlmaSpaceManager.Instance.ShowMessageBox(new MessageBoxData
+        {
+            HeaderCaption = "Подтвердите действие",
+            MainCaption = "Вы действительно хотите выйти?",
+            CancelCaption = "Отмена",
+            OkCaption = "Да",
+            OkAction = AlmaSpaceManager.Instance.ExitApp
+        });
     }
 }

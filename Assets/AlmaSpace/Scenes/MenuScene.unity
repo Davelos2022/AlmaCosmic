@@ -1078,8 +1078,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u044B \u0434\u0435\u0439\u0441\u0442\u0438\u0442\u0435\u043B\u044C\u043D\u043E
-    \u0445\u043E\u0438\u0442\u0435 \u0432\u044B\u0439\u0442\u0438?"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1408,6 +1407,15 @@ MonoBehaviour:
   - {fileID: 1331673572}
   - {fileID: 1815672914}
   - {fileID: 1097378435}
+  _nameFileJuniorForAndroid:
+  - "1_\u041A\u043E\u0441\u043C\u043E\u043D\u0430\u0432\u0442_\u043E\u0437\u0432\u0443\u0447\u043A\u0430"
+  - "2_\u041A\u043E\u0441\u043C\u043E\u0441_\u043E\u0437\u0432\u0443\u0447\u043A\u0430"
+  - "3_\u041A\u043E\u0441\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u043E\u0442\u0440\u044F\u0434_\u043E\u0437\u0432\u0443\u0447\u043A\u0430"
+  _nameFileSeniorForAndroid:
+  - "4_\u041E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u043C\u0441\u044F \u0432
+    \u043F\u043E\u043B\u0435\u0442_\u043E\u0437\u0432\u0443\u0447\u043A\u0430"
+  - "5_\u0421\u043E\u0437\u0432\u0435\u0437\u0434\u0438\u044F_\u043E\u0437\u0432\u0443\u0447\u043A\u0430"
+  - "6_\u041A\u043E\u0441\u043C\u043E\u043D\u0430\u0432\u0442_\u043E\u0437\u0432\u0443\u0447\u043A\u0430"
 --- !u!95 &410788264
 Animator:
   serializedVersion: 5
@@ -2462,7 +2470,7 @@ RectTransform:
   - {fileID: 1742438019}
   - {fileID: 818593095}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2815,7 +2823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u043E\u0434\u0442\u0432\u0435\u0440\u0434\u0438\u0442\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ce393f3af3489f9499e60ee8e42b35d7, type: 2}
   m_sharedMaterial: {fileID: 2881978835078121677, guid: ce393f3af3489f9499e60ee8e42b35d7, type: 2}
@@ -3364,6 +3372,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1002644033}
   m_CullTransparentMesh: 1
+--- !u!1001 &1054705958
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 183544, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_Name
+      value: LunarConsole
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406632, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d0acc00cc82d436b9d11446d2ddfef6, type: 3}
 --- !u!1 &1084537136
 GameObject:
   m_ObjectHideFlags: 0
@@ -4896,7 +4961,7 @@ MonoBehaviour:
   - Screen: {fileID: 955575970}
     Button: {fileID: 1782797992}
   _containerScreen: {fileID: 2003672145}
-  _navigationButton: 0
+  _navigationButton: 1
   _previousScreenButton: {fileID: 506498521}
   _nextScreenButton: {fileID: 12432929}
   _startCreen: 1
@@ -5550,7 +5615,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742438015}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -6026,7 +6091,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1921494826
 GameObject:
