@@ -18,30 +18,20 @@ namespace AlmaSpace
 
         //Acrobatick Propirties
 
-
         private void Start()
         {
             _inMenu = true;
         }
 
-        public async UniTask PlayGymnastics(string[] pathsToVideoFiles, int indexVideo)
+        public async UniTask PlayVideoViwer(string[] pathsToVideoFiles, int indexVideo)
         {
             _inMenu = false;
             _currentVideosPaths = pathsToVideoFiles;
             _pathPlayVideo = pathsToVideoFiles[indexVideo];
             _audioManager.StopMusic();
 
-            await _sceneController.LoadSceneAsync(SceneName.Gymnastics);
+            await _sceneController.LoadSceneAsync(SceneName.VideoViwer);
         }
-
-        public async UniTask PlayAcrobatick()
-        {
-            _inMenu = false;
-            _audioManager.StopMusic();
-
-            await _sceneController.LoadSceneAsync(SceneName.Acrobatics);
-        }
-
         public void ShowMessageBox(MessageBoxData data)
         {
             MessageBox.Show(data);

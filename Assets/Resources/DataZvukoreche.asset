@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8461024f820c95742932ac6c1c9d8440, type: 3}
+  m_Name: DataZvukoreche
+  m_EditorClassIdentifier: 
+  datas:
+  - _sprite: {fileID: 21300000, guid: 084da5866a74eb945a83527dbf76affa, type: 3}
+    _headerText: "\u0427\u0430\u0448\u0435\u0447\u043A\u0430"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: 219826c6d62cc0649b3694770c139211, type: 3}
+    _videoVileName: 0
+  - _sprite: {fileID: 21300000, guid: 8711393d3972ba94e99df6353e0ac7b6, type: 3}
+    _headerText: "\u0412\u043A\u0443\u0441\u043D\u044B\u0439 \u043C\u0435\u0434"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: d4dbb87b2f7655748abee9110a8b560b, type: 3}
+    _videoVileName: 1
+  - _sprite: {fileID: 21300000, guid: c600fd54bcc077a48ac1cb830f42cbc0, type: 3}
+    _headerText: "\u0418\u0433\u043E\u043B\u043E\u0447\u043A\u0430"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: c708f33df8c37b244a42f618250b39bd, type: 3}
+    _videoVileName: 2
+  - _sprite: {fileID: 21300000, guid: d09e3342a1a9abe4992fd2bb980a36ac, type: 3}
+    _headerText: "\u041A\u0430\u0447\u0435\u043B\u0438"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: 1ed99cee77287244a80b6b373f60d0fc, type: 3}
+    _videoVileName: 3
+  - _sprite: {fileID: 21300000, guid: 71e40d9b6e1fe9847af5eeb7398eb19a, type: 3}
+    _headerText: "\u041A\u043E\u0442\u0435\u043D\u043E\u043A \u043B\u043E\u043A\u0430\u0435\u0442
+      \u043C\u043E\u043B\u043E\u043A\u043E"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: 64c01733c15da264885669d42359f787, type: 3}
+    _videoVileName: 4
+  - _sprite: {fileID: 21300000, guid: 05d5b041ffb44be4fa75cfd9af100c9e, type: 3}
+    _headerText: "\u041B\u043E\u043F\u0430\u0442\u0430"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: 1bd1c2b0f26ad4847a7a665b85c19a62, type: 3}
+    _videoVileName: 5
+  - _sprite: {fileID: 21300000, guid: 147faae1f83b92e42a9cf9647c42677a, type: 3}
+    _headerText: "\u041C\u0430\u044F\u0442\u043D\u0438\u043A"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: 3fe2fa68401c6f4479f9d54b26731328, type: 3}
+    _videoVileName: 6
+  - _sprite: {fileID: 21300000, guid: 1a22db476bd82b440a5a173971d9cf31, type: 3}
+    _headerText: "\u041C\u043E\u0441\u0442\u0438\u043A"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: 2c83cac67628ced42aca55669ea8e3ce, type: 3}
+    _videoVileName: 7
+  - _sprite: {fileID: 21300000, guid: 7772908832ceb4b4ebf35671ccd2c3ad, type: 3}
+    _headerText: "\u041E\u0440\u0435\u0448\u0438\u043A"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: 6361545f902f4084da2224fad1197b9e, type: 3}
+    _videoVileName: 8
+  - _sprite: {fileID: 21300000, guid: 4e069c2b3c1c48a42b5a5e7e54730b3d, type: 3}
+    _headerText: "\u0428\u0438\u0440\u043E\u043A\u043E \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u043C
+      \u0440\u043E\u0442"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: efeb518c28dab2e41879f3d617c860e1, type: 3}
+    _videoVileName: 9
+  - _sprite: {fileID: 21300000, guid: 82f3c644190d2254a84f4e7441f2e100, type: 3}
+    _headerText: "\u0423\u043B\u044B\u0431\u043A\u0430"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: da6798e3cfe3f1d42b47b8b166955629, type: 3}
+    _videoVileName: 10
+  - _sprite: {fileID: 21300000, guid: 0348c770e1476854c8e6bcea0845fa7c, type: 3}
+    _headerText: "\u0425\u043E\u0431\u043E\u0442\u043E\u043A"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: 6abe22599b8185943b30d6666f0cd00e, type: 3}
+    _videoVileName: 11
+  - _sprite: {fileID: 21300000, guid: dbdbf59dce9053e4c874b807af5cb753, type: 3}
+    _headerText: "\u0425\u043E\u043C\u044F\u0447\u043E\u043A"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: 2613a8dd08e853647b1e9d612b284913, type: 3}
+    _videoVileName: 12
+  - _sprite: {fileID: 21300000, guid: 3b71212bdbbf0a446834a39caaf9bccd, type: 3}
+    _headerText: "\u0423\u043B\u044B\u0431\u043A\u0430 \u0442\u0440\u0443\u0431\u043E\u0447\u043A\u0430"
+    _descriptionText: 
+    audioClip: {fileID: 8300000, guid: 71fe19159f8b45b4193a0b21dae237d4, type: 3}
+    _videoVileName: 13
