@@ -16,6 +16,9 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textExitButton;
     [Space]
     [SerializeField] private Animator _animatorControllerMenu;
+    [Space]
+    [SerializeField] private Sprite _offMusicSprite;
+    [SerializeField] private Sprite _onMusicSprite;
 
     private const string _animMenu = "ShowMenu";
     private const string _animAbout = "About";
@@ -27,16 +30,20 @@ public class MenuController : MonoBehaviour
 
     private void Start()
     {
-        _menuButton.onClick.AddListener(ShowMenu);
-        _aboutButton.onClick.AddListener(ShowAboutCompany);
+        _menuButton.onClick.AddListener(ShowAboutCompany);
         _soundButton.onClick.AddListener(ActiveDeactiveSound);
+
+        //_menuButton.onClick.AddListener(ShowMenu);
+        //_aboutButton.onClick.AddListener(ShowAboutCompany);
     }
 
     private void OnDestroy()
     {
-        _menuButton.onClick.RemoveListener(ShowMenu);
-        _aboutButton.onClick.RemoveListener(ShowAboutCompany);
+        _menuButton.onClick.RemoveListener(ShowAboutCompany);
         _soundButton.onClick.RemoveListener(ActiveDeactiveSound);
+
+        //_menuButton.onClick.RemoveListener(ShowMenu);
+        //_aboutButton.onClick.RemoveListener(ShowAboutCompany);
     }
 
     private void ShowMenu()
@@ -71,11 +78,13 @@ public class MenuController : MonoBehaviour
 
     private void ShowAboutCompany()
     {
+        _backGroundPanel.SetActive(true);
         _animatorControllerMenu.SetBool(_animAbout, true);
     }
 
     public void HideAboutCompany()
     {
+        _backGroundPanel.SetActive(false);
         _animatorControllerMenu.SetBool(_animAbout, false);
     }
 
@@ -84,9 +93,15 @@ public class MenuController : MonoBehaviour
         AlmaSpaceManager.Instance.AudioManager.OnOffMusic();
 
         if (!AlmaSpaceManager.Instance.AudioManager.Music)
-            _textSoundButton.text = _textOnMusic;
+        {
+            //_textSoundButton.text = _textOnMusic;
+            _soundButton.image.sprite = _offMusicSprite;
+        }
         else
-            _textSoundButton.text = _textOffMusic;
+        {
+            //_textSoundButton.text = _textOffMusic;
+            _soundButton.image.sprite = _onMusicSprite;
+        }
     }
 
     private void ExitToMenu()

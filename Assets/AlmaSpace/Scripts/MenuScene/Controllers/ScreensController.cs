@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -34,6 +35,7 @@ public class ScreensController : MonoBehaviour, IDragHandler, IEndDragHandler, I
     [SerializeField][Range(1, 10)] private int _startCreen;
     [SerializeField][Range(150, 550)] private float _minSwipeDistance;
     [SerializeField][Range(0.3f, 1f)] private float _scrollDuration;
+    [SerializeField] private UnityEvent _eventScreenHide;
 
     //Type Click Propirties
     private GameObject _currentScreen;
@@ -87,6 +89,7 @@ public class ScreensController : MonoBehaviour, IDragHandler, IEndDragHandler, I
     }
     private void ShowScreen(ScreenPanel screenPanel)
     {
+        _eventScreenHide.Invoke();
         _currentScreen = screenPanel.Screen;
         ActivateDeActivateScreen(true);
     }

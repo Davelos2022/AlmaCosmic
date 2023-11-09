@@ -161,6 +161,8 @@ namespace AirFishLab.ScrollingList.ListStateProcessing.Linear
             return _bouncingBackCurve.GetDistance(deltaTime);
         }
 
+        public static Action EndMovient;
+
         public void EndMovement()
         {
             _unitMovementCurve.EndMovement();

@@ -649,7 +649,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1 &568828081
 GameObject:
@@ -1056,7 +1056,7 @@ GameObject:
   - component: {fileID: 1033774396}
   - component: {fileID: 1033774397}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: RightPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,9 +8,6 @@ namespace AirFishLab.ScrollingList.Demo
     {
         [SerializeField]
         private int _numOfContents = 10;
-        [SerializeField]
-        private Texture2D[] textures;
-
 
         private readonly List<int> _contents = new List<int>();
         private readonly IntListContent _contentWrapper = new IntListContent();
@@ -32,11 +29,6 @@ namespace AirFishLab.ScrollingList.Demo
         public override int GetContentCount()
         {
             return _contents.Count;
-        }
-
-        public Texture2D GetTexture(int index)
-        {
-            return textures[index];
         }
     }
 }

@@ -11,12 +11,8 @@ namespace AlmaSpace
 
         public AudioManager AudioManager => _audioManager;
         private bool _inMenu; public bool InMenu => _inMenu;
-
-        //Gymnastick Propirties
         private string[] _currentVideosPaths; public string[] CurrentVideos => _currentVideosPaths;
         private string _pathPlayVideo; public string CurrentVideo => _pathPlayVideo;
-
-        //Acrobatick Propirties
 
         private void Start()
         {
@@ -28,7 +24,7 @@ namespace AlmaSpace
             _inMenu = false;
             _currentVideosPaths = pathsToVideoFiles;
             _pathPlayVideo = pathsToVideoFiles[indexVideo];
-            _audioManager.StopMusic();
+            _audioManager.StopClip();
 
             await _sceneController.LoadSceneAsync(SceneName.VideoViwer);
         }
@@ -41,9 +37,6 @@ namespace AlmaSpace
         {
             _sceneController.UnLoadScene();
             _inMenu = true;
-
-            if (_audioManager.Music)
-                _audioManager.PlauMusic();
         }
 
         public void ExitApp()

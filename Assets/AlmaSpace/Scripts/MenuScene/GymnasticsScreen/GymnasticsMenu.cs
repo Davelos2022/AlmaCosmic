@@ -1,71 +1,59 @@
 using UnityEngine;
 using UnityEngine.UI;
 using AlmaSpace;
+using System.Collections.Generic;
+
+public enum TypeGroup
+{
+    Junior,
+    Semior
+}
 
 public class GymnasticsMenu : MonoBehaviour
 {
-    [SerializeField] private Button[] _buttonsJuniorGroup;
-    [SerializeField] private Button[] _buttonsSeniorGroup;
-    [Space]
-    [SerializeField] private string[] _nameFileJuniorForAndroid;
-    [SerializeField] private string[] _nameFileSeniorForAndroid;
+    [SerializeField] private ButtonCard[] _buttonsCardsJuniorGroup;
+    [SerializeField] private ButtonCard[] _buttonsCardsSeniorGroup;
+    [SerializeField] private GymnasticsScr _gymnasticsScr;
 
     private string[] _videosPathsJunior;
     private string[] _videosPathsSenior;
 
     private void Start()
     {
-        InsalizationsVideoPath();
-
-        InsalizationButton(_buttonsJuniorGroup, _videosPathsJunior);
-        InsalizationButton(_buttonsSeniorGroup, _videosPathsSenior);
+        InsalizationButton(_buttonsCardsJuniorGroup, _videosPathsJunior, TypeGroup.Junior);
+        InsalizationButton(_buttonsCardsSeniorGroup, _videosPathsSenior, TypeGroup.Semior);
     }
 
-    private void OnDestroy()
+    private void InsalizationButton(ButtonCard[] buttonsCards, string[] videoPaths, TypeGroup typeGroup)
     {
-        ClearListenerButtons(_buttonsJuniorGroup);
-        ClearListenerButtons(_buttonsSeniorGroup);
-    }
+        List<string> paths = new List<string>();
 
-    private void InsalizationsVideoPath()
-    {
-        if (Application.platform == RuntimePlatform.WindowsEditor)
-        {
-            _videosPathsJunior = FileManager.GetCountVideoFiles(FileManager._pathToVideoGymnastics + FileManager._juniorGroupGymnastics);
-            _videosPathsSenior = FileManager.GetCountVideoFiles(FileManager._pathToVideoGymnastics + FileManager._seniorGroupGymnastics);
-        }
-        else
-        {
-            _videosPathsJunior = FileManager.GetCountVideoFiles(FileManager._pathToVideoGymnastics + FileManager._juniorGroupGymnastics, _nameFileJuniorForAndroid);
-            _videosPathsSenior = FileManager.GetCountVideoFiles(FileManager._pathToVideoGymnastics + FileManager._seniorGroupGymnastics, _nameFileSeniorForAndroid);
-        }
-    }
-
-    private void InsalizationButton(Button[] buttons, string[] paths)
-    {
-        for (int x = 0; x < paths.Length; x++)
+        for (int x = 0; x < buttonsCards.Length; x++)
         {
             int index = x;
 
-            if (x > buttons.Length - 1)
+            switch (typeGroup)
             {
-                Debug.Log($"Файлов больше чем кнопок, добавьте кнопки для {buttons}");
-                break;
+                case TypeGroup.Junior:
+                    buttonsCards[x].SetInfoCardGymnastick(_gymnasticsScr.JuniorGroup[x]);
+                    paths.Add(Application.streamingAssetsPath + "/" + _gymnasticsScr.JuniorGroup[x].VideoPath);
+                    break;
+                case TypeGroup.Semior:
+                    buttonsCards[x].SetInfoCardGymnastick(_gymnasticsScr.SeniorGroup[x]);
+                    paths.Add(Application.streamingAssetsPath + "/" + _gymnasticsScr.SeniorGroup[x].VideoPath);
+                    break;
+                default:
+                    break;
             }
 
-            buttons[x].onClick.AddListener(() => ClickButton(paths, index));
+            buttonsCards[x].GetComponent<Button>().onClick.AddListener(() => ClickButton(videoPaths, index));
         }
-    }
 
-    private void ClearListenerButtons(Button[] buttons)
-    {
-        for (int x = 0; x < buttons.Length; x++)
-            buttons[x].onClick.RemoveAllListeners();
+        videoPaths = paths.ToArray();
     }
 
     private async void ClickButton(string[] paths, int index)
     {
         await AlmaSpaceManager.Instance.PlayVideoViwer(paths, index);
     }
-
 }
