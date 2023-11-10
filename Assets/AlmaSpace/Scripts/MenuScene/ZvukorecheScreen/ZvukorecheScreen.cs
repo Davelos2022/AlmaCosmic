@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ZvukorecheMenu : MonoBehaviour
+public class ZvukorecheScreen : MonoBehaviour
 {
     [SerializeField] private Button _startButton;
     [SerializeField] private PreviewBox _previewBox;
@@ -15,23 +15,24 @@ public class ZvukorecheMenu : MonoBehaviour
     private string[] _videosPaths;
     private int _currentIndexCard;
 
+
+    private void Awake()
+    {
+    }
     void Start()
     {
-        InsalizationButton();
+
+        InsalizationsButtons();
         ShowInfo(0);
     }
 
-    private void OnEnable()
-    {
-        AlmaSpaceManager.Instance.AudioManager.PlayClip(_startClip);
-    }
-
+  
     private void OnDisable()
     {
         AlmaSpaceManager.Instance.AudioManager.StopClip();
     }
 
-    private void InsalizationButton()
+    private void InsalizationsButtons()
     {
         _startButton.onClick.AddListener(StartPlay);
         List<string> paths = new List<string>();
@@ -53,10 +54,10 @@ public class ZvukorecheMenu : MonoBehaviour
     {
         _buttonsCard[_currentIndexCard].SelectedCard(false);
         _buttonsCard[indexCard].SelectedCard(true);
-
-        ShowInfo(indexCard);
         AlmaSpaceManager.Instance.AudioManager.PlayClip(_zvukorecheScr.Datas[indexCard].AudioClip);
         _currentIndexCard = indexCard;
+
+        ShowInfo(indexCard);
     }
 
     private void ShowInfo(int indexData)
@@ -67,5 +68,11 @@ public class ZvukorecheMenu : MonoBehaviour
     private async void StartPlay()
     {
         await AlmaSpaceManager.Instance.PlayVideoViwer(_videosPaths, _currentIndexCard);
+    }
+
+    public void Test()
+    {
+        AlmaSpaceManager.Instance.AudioManager.PlayClip(_startClip);
+
     }
 }

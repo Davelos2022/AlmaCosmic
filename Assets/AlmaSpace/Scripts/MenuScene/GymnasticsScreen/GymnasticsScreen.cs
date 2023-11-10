@@ -9,7 +9,7 @@ public enum TypeGroup
     Semior
 }
 
-public class GymnasticsMenu : MonoBehaviour
+public class GymnasticsScreen : MonoBehaviour
 {
     [SerializeField] private ButtonCard[] _buttonsCardsJuniorGroup;
     [SerializeField] private ButtonCard[] _buttonsCardsSeniorGroup;

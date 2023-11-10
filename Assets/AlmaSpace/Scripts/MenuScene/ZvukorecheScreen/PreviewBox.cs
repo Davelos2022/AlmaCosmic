@@ -8,7 +8,6 @@ public class PreviewBox : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _headerText;
     [SerializeField] private TextMeshProUGUI _descriptionText;
 
-
     public void SetInfoPreview(DataZvukoreche dataZvukoreche)
     {
         _imageBoxPreview.sprite = dataZvukoreche.SpriteButton;
