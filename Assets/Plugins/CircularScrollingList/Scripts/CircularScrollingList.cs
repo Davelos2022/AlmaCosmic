@@ -479,6 +479,7 @@ namespace AirFishLab.ScrollingList
                 return;
 
             SetMovement(eventData, InputPhase.Ended);
+      
         }
 
         public void OnScroll(PointerEventData eventData)

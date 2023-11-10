@@ -2509,7 +2509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1300.1876, y: -334.7527}
+  m_AnchoredPosition: {x: -1184.6155, y: -418.15417}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &334373196
@@ -2662,7 +2662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 557.22327, y: -17.745083}
+  m_AnchoredPosition: {x: 507.69232, y: -18.679203}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &335091755
@@ -3064,7 +3064,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 928.70544, y: -132.2701}
+  m_AnchoredPosition: {x: 846.1539, y: -55.588432}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &379987689
@@ -4289,7 +4289,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -185.74109, y: -12.460779}
+  m_AnchoredPosition: {x: -169.23077, y: -5.7757816}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &554327811
@@ -4872,7 +4872,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2043.152, y: -772.94867}
+  m_AnchoredPosition: {x: -1861.5386, y: -961.5801}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &649464462
@@ -5910,7 +5910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2414.6343, y: -772.94867}
+  m_AnchoredPosition: {x: -2200, y: -1291.2979}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &794734713
@@ -6063,7 +6063,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 185.74109, y: 92.97796}
+  m_AnchoredPosition: {x: 169.23077, y: 1.0994939}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &797140087
@@ -7434,7 +7434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -557.22327, y: -159.21056}
+  m_AnchoredPosition: {x: -507.69232, y: -79.51317}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1058971531
@@ -8834,7 +8834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1300.1876, y: -243.79276}
+  m_AnchoredPosition: {x: 1184.6155, y: -107.551865}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1187372460
@@ -9700,7 +9700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.236084, y: -10.72821}
+  m_AnchoredPosition: {x: 1.236084, y: -10.7282715}
   m_SizeDelta: {x: 28.1534, y: 44.2844}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1399096696
@@ -10251,20 +10251,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5b5b116286aa044880104eaa4edf53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 1
+  _type: 0
   _startScreen: {fileID: 633772654}
   _returnMainScreenButton: {fileID: 115184914}
   _fafeAnimator: {fileID: 529359071}
   _screens:
   - Screen: {fileID: 410788261}
     Button: {fileID: 1002644035}
+    ShowSreen:
+      m_PersistentCalls:
+        m_Calls: []
+    HideScreen:
+      m_PersistentCalls:
+        m_Calls: []
   - Screen: {fileID: 955575970}
     Button: {fileID: 1782797992}
+    ShowSreen:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 955575972}
+          m_TargetAssemblyTypeName: ZvukorecheScreen, Assembly-CSharp
+          m_MethodName: IntroductionScreen
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    HideScreen:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 955575972}
+          m_TargetAssemblyTypeName: ZvukorecheScreen, Assembly-CSharp
+          m_MethodName: CloseScreen
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   _containerScreen: {fileID: 2003672145}
   _navigationButton: 1
   _previousScreenButton: {fileID: 506498521}
   _nextScreenButton: {fileID: 12432929}
-  _startCreen: 1
+  _startSreen: 1
   _minSwipeDistance: 300
   _scrollDuration: 0.3
 --- !u!114 &1548678781
@@ -11089,8 +11125,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -166.66841, y: -1.7700195}
-  m_SizeDelta: {x: 333.3269, y: 0}
+  m_AnchoredPosition: {x: -164.33894, y: -1.7700195}
+  m_SizeDelta: {x: 690.5093, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1695343071
 GameObject:
@@ -11456,8 +11492,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -0.000030518, y: 324.23}
-  m_SizeDelta: {x: 1980.9731, y: 648.4561}
+  m_AnchoredPosition: {x: 1.4494, y: 330.58}
+  m_SizeDelta: {x: 1612.7932, y: 661.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1723835188
 MonoBehaviour:
@@ -12010,7 +12046,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -928.70544, y: -247.23763}
+  m_AnchoredPosition: {x: -846.1539, y: -219.47801}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1775805741
@@ -12679,7 +12715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1671.6698, y: -383.07477}
+  m_AnchoredPosition: {x: 1523.0769, y: -172.49332}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1814299471
@@ -13876,7 +13912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2043.152, y: -575.6387}
+  m_AnchoredPosition: {x: 1861.5386, y: -248.33647}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031199331
@@ -14023,7 +14059,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 272, y: -404.0072}
+  m_AnchoredPosition: {x: 272, y: -373.56}
   m_SizeDelta: {x: 701.2869, y: 295.9112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2080327393
@@ -14241,7 +14277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1671.6698, y: -568.8515}
+  m_AnchoredPosition: {x: -1523.0769, y: -668.0269}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2101470483
@@ -14935,66 +14971,48 @@ MonoBehaviour:
     _reverseContentOrder: 0
     _alignAtFocusingPosition: 1
     _reverseScrollingDirection: 1
-    _initFocusingContentID: 6
+    _initFocusingContentID: 0
     _focusSelectedBox: 1
     _initializeOnStart: 1
-    _boxDensity: 0.41
+    _boxDensity: 0.45
     _boxPositionCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -0.72810745
-        value: -0.29724503
-        inSlope: 0.8029512
-        outSlope: 0.8029512
-        tangentMode: 34
+        time: -4.6541
+        value: -3.8940144
+        inSlope: 5.207939
+        outSlope: 5.207939
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.33333334
+        outWeight: 0.04633623
       - serializedVersion: 3
-        time: -0.52936625
-        value: -0.13766554
-        inSlope: 0.3223665
-        outSlope: 0.3223665
+        time: -2.5835793
+        value: -2.2228532
+        inSlope: 0.51067066
+        outSlope: 0.51067066
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.23214863
-        outWeight: 1
+        inWeight: 0.12936494
+        outWeight: 0.14896552
       - serializedVersion: 3
-        time: -0.040175438
-        value: 0.012772102
-        inSlope: 0.59892374
-        outSlope: 0.59892374
+        time: 0.0024047047
+        value: 0.0016469955
+        inSlope: -0.0029513289
+        outSlope: -0.0029513289
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.03419498
-        outWeight: 0.042051844
-      - serializedVersion: 3
-        time: 0.09419514
-        value: 0.030339304
-        inSlope: -0.30813947
-        outSlope: -0.30813947
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.11387352
         outWeight: 0.22058506
       - serializedVersion: 3
-        time: 0.5206138
-        value: -0.09978542
-        inSlope: -0.29149136
-        outSlope: -0.29149136
+        time: 4.017067
+        value: -0.13694286
+        inSlope: 0.7413617
+        outSlope: 0.7413617
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.9249878
-        value: -0.29433823
-        inSlope: -0.48112097
-        outSlope: -0.48112097
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
+        inWeight: 0.076915555
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -15029,15 +15047,15 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0.0012239264
+        outSlope: -0.0012239264
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.15677337
       - serializedVersion: 3
-        time: 0.42805707
-        value: 0.9255528
+        time: 0.36329877
+        value: 0.9300999
         inSlope: -0.192757
         outSlope: -0.192757
         tangentMode: 0
@@ -15045,13 +15063,13 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.7871399
-        value: 0.874115
-        inSlope: 0
-        outSlope: 0
+        time: 0.7989197
+        value: 0.87042236
+        inSlope: -0.0493424
+        outSlope: -0.0493424
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.10362571
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -15060,8 +15078,8 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0
+        time: 0.0002708435
+        value: 0.012054443
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -15069,13 +15087,13 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.25
-        value: 1
-        inSlope: 5.042882
-        outSlope: 5.042882
+        time: 0.1295166
+        value: 1.0064354
+        inSlope: 0.89081776
+        outSlope: 0.89081776
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.09166664
+        inWeight: 0.033801228
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -15092,7 +15110,7 @@ MonoBehaviour:
         - m_Target: {fileID: 4533586146897606489}
           m_TargetAssemblyTypeName: AirFishLab.ScrollingList.CircularScrollingList,
             Assembly-CSharp-firstpass
-          m_MethodName: EndMovement
+          m_MethodName: 
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -15120,8 +15138,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.002655, y: 258.55}
-  m_SizeDelta: {x: 1980, y: 517.09}
+  m_AnchoredPosition: {x: 0.002655, y: 330.58554}
+  m_SizeDelta: {x: 1980, y: 661.1612}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4533586146897606495
 GameObject:
@@ -15200,7 +15218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2414.6343, y: -765.3899}
+  m_AnchoredPosition: {x: 2200, y: -333.00497}
   m_SizeDelta: {x: 280, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6429291082460062103

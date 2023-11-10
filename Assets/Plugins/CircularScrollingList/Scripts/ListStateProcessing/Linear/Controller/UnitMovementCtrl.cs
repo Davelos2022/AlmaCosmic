@@ -114,6 +114,7 @@ namespace AirFishLab.ScrollingList.ListStateProcessing.Linear
                     distanceAdded -= curDistance;
                 _unitMovementCurve.SetMovement(distanceAdded);
             }
+
         }
 
         /// <summary>

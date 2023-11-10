@@ -15,21 +15,10 @@ public class ZvukorecheScreen : MonoBehaviour
     private string[] _videosPaths;
     private int _currentIndexCard;
 
-
-    private void Awake()
-    {
-    }
     void Start()
     {
-
         InsalizationsButtons();
         ShowInfo(0);
-    }
-
-  
-    private void OnDisable()
-    {
-        AlmaSpaceManager.Instance.AudioManager.StopClip();
     }
 
     private void InsalizationsButtons()
@@ -70,9 +59,13 @@ public class ZvukorecheScreen : MonoBehaviour
         await AlmaSpaceManager.Instance.PlayVideoViwer(_videosPaths, _currentIndexCard);
     }
 
-    public void Test()
+    public void IntroductionScreen()
     {
         AlmaSpaceManager.Instance.AudioManager.PlayClip(_startClip);
+    }
 
+    public void CloseScreen()
+    {
+        AlmaSpaceManager.Instance.AudioManager.StopClip();
     }
 }
