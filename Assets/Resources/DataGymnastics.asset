@@ -13,18 +13,17 @@ MonoBehaviour:
   m_Name: DataGymnastics
   m_EditorClassIdentifier: 
   JuniorGroup:
-  - SpriteButton: {fileID: 21300000, guid: f109dc68c56d2dd429f0089926afbac9, type: 3}
+  - SpriteButton: {fileID: 21300000, guid: e9abbd2ba6ef6ee428ed2450ac444073, type: 3}
     VideoPath: "GymnasticsData\\Video\\JuniorGroup\\1_\u041A\u043E\u0441\u043C\u043E\u043D\u0430\u0432\u0442_\u043E\u0437\u0432\u0443\u0447\u043A\u0430.mp4"
-  - SpriteButton: {fileID: 21300000, guid: 390a7dee9130a1f45a7ec7315ba0e9e6, type: 3}
+  - SpriteButton: {fileID: 21300000, guid: 5aacd102c6df8dd4395e1c238dd4cc81, type: 3}
     VideoPath: "GymnasticsData\\Video\\JuniorGroup\\2_\u041A\u043E\u0441\u043C\u043E\u0441_\u043E\u0437\u0432\u0443\u0447\u043A\u0430.mp4"
-  - SpriteButton: {fileID: 21300000, guid: 6546e1df285c7414994eeeb16adc6a52, type: 3}
-    VideoPath: "GymnasticsData\\Video\\JuniorGroup\\3_\u041A\u043E\u0441\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0439
-      \u043E\u0442\u0440\u044F\u0434_\u043E\u0437\u0432\u0443\u0447\u043A\u0430.mp4"
+  - SpriteButton: {fileID: 21300000, guid: 816ce2f18faa793479cf9fe81aced023, type: 3}
+    VideoPath: "GymnasticsData\\Video\\JuniorGroup\\3_\u041A\u043E\u0441\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0439-\u043E\u0442\u0440\u044F\u0434_\u043E\u0437\u0432\u0443\u0447\u043A\u0430.mp4"
   SeniorGroup:
-  - SpriteButton: {fileID: 21300000, guid: 683386cc1adc9434fb375d817877cd72, type: 3}
+  - SpriteButton: {fileID: 21300000, guid: f16202dd791212f4fb8f5dfa55043897, type: 3}
     VideoPath: "GymnasticsData\\Video\\SeniorGroup\\4_\u041E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u043C\u0441\u044F
       \u0432 \u043F\u043E\u043B\u0435\u0442_\u043E\u0437\u0432\u0443\u0447\u043A\u0430.mp4"
-  - SpriteButton: {fileID: 21300000, guid: bf10f32b372de6948b16ca0629a0be81, type: 3}
+  - SpriteButton: {fileID: 21300000, guid: 91ba91dcda9600b469335ea0901006b9, type: 3}
     VideoPath: "GymnasticsData\\Video\\SeniorGroup\\5_\u0421\u043E\u0437\u0432\u0435\u0437\u0434\u0438\u044F_\u043E\u0437\u0432\u0443\u0447\u043A\u0430.mp4"
-  - SpriteButton: {fileID: 21300000, guid: 245c6c4fd1963294dbff49fc15b39e0d, type: 3}
+  - SpriteButton: {fileID: 21300000, guid: e876dd23c8171dc469e51c099f84f657, type: 3}
     VideoPath: "GymnasticsData\\Video\\SeniorGroup\\6_\u041A\u043E\u0441\u043C\u043E\u043D\u0430\u0432\u0442_\u043E\u0437\u0432\u0443\u0447\u043A\u0430.mp4"

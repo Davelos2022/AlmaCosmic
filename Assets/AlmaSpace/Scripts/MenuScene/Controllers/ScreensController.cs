@@ -103,6 +103,7 @@ public class ScreensController : MonoBehaviour, IDragHandler, IEndDragHandler, I
 
     private void ReturnInMainScreen()
     {
+        _currentScreen.HideScreen?.Invoke();
         _currentScreen.Screen.SetActive(false);
         _currentScreen = null;
 

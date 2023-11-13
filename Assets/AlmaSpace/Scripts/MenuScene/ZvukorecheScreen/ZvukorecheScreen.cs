@@ -10,6 +10,7 @@ public class ZvukorecheScreen : MonoBehaviour
     [SerializeField] private AudioClip _startClip;
     [SerializeField] private ButtonCard[] _buttonsCard;
     [Space]
+    [SerializeField] private int _startCard;
     [SerializeField] private ZvukorecheScr _zvukorecheScr;
 
     private string[] _videosPaths;
@@ -18,7 +19,8 @@ public class ZvukorecheScreen : MonoBehaviour
     void Start()
     {
         InsalizationsButtons();
-        ShowInfo(0);
+        _currentIndexCard = _startCard;
+        ShowInfo(_currentIndexCard);
     }
 
     private void InsalizationsButtons()

@@ -16,9 +16,6 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textExitButton;
     [Space]
     [SerializeField] private Animator _animatorControllerMenu;
-    [Space]
-    [SerializeField] private Sprite _offMusicSprite;
-    [SerializeField] private Sprite _onMusicSprite;
 
     private const string _animMenu = "ShowMenu";
     private const string _animAbout = "About";
@@ -95,12 +92,10 @@ public class MenuController : MonoBehaviour
         if (!AlmaSpaceManager.Instance.AudioManager.Music)
         {
             //_textSoundButton.text = _textOnMusic;
-            _soundButton.image.sprite = _offMusicSprite;
         }
         else
         {
             //_textSoundButton.text = _textOffMusic;
-            _soundButton.image.sprite = _onMusicSprite;
         }
     }
 

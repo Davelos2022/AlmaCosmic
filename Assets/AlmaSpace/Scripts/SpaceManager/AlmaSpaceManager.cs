@@ -37,6 +37,9 @@ namespace AlmaSpace
         {
             _sceneController.UnLoadScene();
             _inMenu = true;
+
+            if (!AudioManager.Music)
+                AudioManager.OnOffMusic();
         }
 
         public void ExitApp()
