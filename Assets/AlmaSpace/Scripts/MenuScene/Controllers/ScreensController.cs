@@ -24,24 +24,23 @@ public enum TypeModeController
 public class ScreensController : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     [SerializeField] private TypeModeController _type;
+    [SerializeField] [Range(1, 50)] private int _startScreenIndex;
+    [SerializeField] private ScreenPanel[] _screens;
     [Space]
     [Header("Typpe Click Settings")]
-    [SerializeField] private GameObject _startScreen;
-    [SerializeField] private Button _returnMainScreenButton;
+    [SerializeField] private Button _homeButton;
     [SerializeField] private Animator _fafeAnimator;
-    [SerializeField] private ScreenPanel[] _screens;
     [Header("Type Swipe Settings")]
     [SerializeField] private RectTransform _containerScreen;
     [SerializeField] private bool _navigationButton;
     [SerializeField] private Button _previousScreenButton;
     [SerializeField] private Button _nextScreenButton;
-    [SerializeField] [Range(1, 10)] private int _startSreen;
     [SerializeField] [Range(150, 550)] private float _minSwipeDistance;
     [SerializeField] [Range(0.3f, 1f)] private float _scrollDuration;
 
+    private ScreenPanel _currentScreen;
 
     //Type Click Propirties
-    private ScreenPanel _currentScreen;
     private const string _fadeAnimName = "Fade_mainMenu";
 
     //Type Swipe Propirties
@@ -67,28 +66,32 @@ public class ScreensController : MonoBehaviour, IDragHandler, IEndDragHandler, I
     {
         if (_type == TypeModeController.Click)
         {
-            _returnMainScreenButton.onClick.RemoveListener(ReturnInMainScreen);
+            _homeButton?.onClick.RemoveListener(ReturnInMainScreen);
 
             for (int x = 0; x < _screens.Length; x++)
-                _screens[x].Button.onClick.RemoveListener(() => ShowScreen(_screens[x]));
+                _screens[x].Button?.onClick.RemoveListener(() => ShowScreen(_screens[x]));
         }
         else if (_type == TypeModeController.Swipe && _navigationButton)
         {
-            _previousScreenButton.onClick.RemoveListener(() => NavigationScroll(-1));
-            _nextScreenButton.onClick.RemoveListener(() => NavigationScroll(+1));
+            _previousScreenButton?.onClick.RemoveListener(() => NavigationScroll(-1));
+            _nextScreenButton?.onClick.RemoveListener(() => NavigationScroll(+1));
         }
     }
 
     //Type Click methods
     private void SettingScreensForClick()
     {
-        _returnMainScreenButton.onClick.AddListener(ReturnInMainScreen);
+        _homeButton?.onClick.AddListener(ReturnInMainScreen);
 
         for (int x = 0; x < _screens.Length; x++)
         {
             int index = x;
-            _screens[x].Button.onClick.AddListener(() => ShowScreen(_screens[index]));
+            _screens[x].Button?.onClick.AddListener(() => ShowScreen(_screens[index]));
+            _screens[x].Screen.SetActive(false);
         }
+
+        _startScreenIndex = _startScreenIndex > _screens.Length - 1 ? _screens.Length - 1 : _startScreenIndex - 1;
+        _screens[_startScreenIndex].Screen.SetActive(true);
     }
     private void ShowScreen(ScreenPanel screenPanel)
     {
@@ -108,16 +111,16 @@ public class ScreensController : MonoBehaviour, IDragHandler, IEndDragHandler, I
         _currentScreen = null;
 
         _fafeAnimator.Play(_fadeAnimName);
-        _returnMainScreenButton.gameObject.SetActive(false);
-        _startScreen.SetActive(true);
+        _homeButton.gameObject.SetActive(false);
+        _screens[_startScreenIndex].Screen.SetActive(true);
     }
 
     private void ActivateDeActivateScreen(bool activate)
     {
         _fafeAnimator.Play(_fadeAnimName);
-        _startScreen.SetActive(!activate);
+        _screens[_startScreenIndex].Screen.SetActive(!activate);
         _currentScreen.Screen.SetActive(activate);
-        _returnMainScreenButton.gameObject.SetActive(activate);
+        _homeButton.gameObject.SetActive(activate);
     }
 
     //Type Swipe methods
@@ -126,7 +129,7 @@ public class ScreensController : MonoBehaviour, IDragHandler, IEndDragHandler, I
         _screenRect = GetComponent<RectTransform>();
         _startScreenPosition = _screenRect.anchoredPosition;
         _screenCount = _containerScreen.childCount;
-        _currentScreenIndex = _startSreen > _screenCount - 1 ? _screenCount - 1 : _startSreen - 1;
+        _currentScreenIndex = _startScreenIndex > _screenCount - 1 ? _screenCount - 1 : _startScreenIndex - 1;
 
         if (_navigationButton)
         {
@@ -151,6 +154,8 @@ public class ScreensController : MonoBehaviour, IDragHandler, IEndDragHandler, I
             nextScreen.gameObject.SetActive(true);
         }
 
+        _currentScreen = _screens[_currentScreenIndex];
+        _currentScreen.Screen.SetActive(true);
         ScrollTo(_containerScreen, _currentScreenIndex);
     }
 
@@ -182,21 +187,19 @@ public class ScreensController : MonoBehaviour, IDragHandler, IEndDragHandler, I
                 if (dragDistance > 0.5f && _currentScreenIndex < _screenCount - 1)
                 {
                     Debug.Log("Next");
-
-
+                    _currentScreen.HideScreen?.Invoke();
                     _currentScreenIndex++;
-
-
+                    _currentScreen = _screens[_currentScreenIndex];
+                    _currentScreen.ShowSreen?.Invoke();
 
                 }
                 else if (dragDistance < 0f && _currentScreenIndex > 0)
                 {
                     Debug.Log("Back");
-
-
+                    _currentScreen.HideScreen?.Invoke();
                     _currentScreenIndex--;
-
-
+                    _currentScreen = _screens[_currentScreenIndex];
+                    _currentScreen.ShowSreen?.Invoke();
                 }
 
                 ScrollTo(_containerScreen, _currentScreenIndex);

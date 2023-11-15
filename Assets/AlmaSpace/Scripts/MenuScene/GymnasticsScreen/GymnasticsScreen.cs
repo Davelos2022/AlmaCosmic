@@ -54,6 +54,7 @@ public class GymnasticsScreen : MonoBehaviour
 
     private async void ClickButton(string[] paths, int index)
     {
+        AlmaSpaceManager.Instance.TypeLesson = TypeLesson.Gymnastick;
         await AlmaSpaceManager.Instance.PlayVideoViwer(paths, index);
     }
 }

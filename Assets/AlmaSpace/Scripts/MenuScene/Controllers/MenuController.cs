@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using AlmaSpace;
 using VolumeBox.Utils;
+using System;
 
 public class MenuController : MonoBehaviour
 {
@@ -25,10 +26,13 @@ public class MenuController : MonoBehaviour
     private const string _textExitApp = "Выйти из программы";
     private const string _textExitToMenu = "Выйти в меню";
 
+    public static Action _aboutCompany;
+    public static Action _hideCompany;
+
     private void Start()
     {
         _menuButton.onClick.AddListener(ShowAboutCompany);
-        _soundButton.onClick.AddListener(ActiveDeactiveSound);
+        //_soundButton.onClick.AddListener(ActiveDeactiveSound);
 
         //_menuButton.onClick.AddListener(ShowMenu);
         //_aboutButton.onClick.AddListener(ShowAboutCompany);
@@ -37,7 +41,7 @@ public class MenuController : MonoBehaviour
     private void OnDestroy()
     {
         _menuButton.onClick.RemoveListener(ShowAboutCompany);
-        _soundButton.onClick.RemoveListener(ActiveDeactiveSound);
+        //_soundButton.onClick.RemoveListener(ActiveDeactiveSound);
 
         //_menuButton.onClick.RemoveListener(ShowMenu);
         //_aboutButton.onClick.RemoveListener(ShowAboutCompany);
@@ -48,18 +52,18 @@ public class MenuController : MonoBehaviour
         _backGroundPanel.SetActive(true);
         _animatorControllerMenu.SetBool(_animMenu, true);
 
-        if (AlmaSpaceManager.Instance.InMenu)
-        {
-            _soundButton.interactable = true;
-            _textExitButton.text = _textExitApp;
-            _exitButton.onClick.AddListener(ExitApp);
-        }
-        else
-        {
-            _soundButton.interactable = false;
-            _textExitButton.text = _textExitToMenu;
-            _exitButton.onClick.AddListener(ExitToMenu);
-        }
+        //if (AlmaSpaceManager.Instance.InMenu)
+        //{
+        //    _soundButton.interactable = true;
+        //    _textExitButton.text = _textExitApp;
+        //    _exitButton.onClick.AddListener(ExitApp);
+        //}
+        //else
+        //{
+        //    _soundButton.interactable = false;
+        //    _textExitButton.text = _textExitToMenu;
+        //    _exitButton.onClick.AddListener(ExitToMenu);
+        //}
     }
 
     public void HideMenu()
@@ -67,20 +71,22 @@ public class MenuController : MonoBehaviour
         _backGroundPanel.SetActive(false);
         _animatorControllerMenu.SetBool(_animMenu, false);
 
-        if (AlmaSpaceManager.Instance.InMenu)
-            _exitButton.onClick.RemoveListener(ExitApp);
-        else
-            _exitButton.onClick.RemoveListener(ExitToMenu);
+        //if (AlmaSpaceManager.Instance.InMenu)
+        //    _exitButton.onClick.RemoveListener(ExitApp);
+        //else
+        //    _exitButton.onClick.RemoveListener(ExitToMenu);
     }
 
     private void ShowAboutCompany()
     {
+        _aboutCompany?.Invoke();
         _backGroundPanel.SetActive(true);
         _animatorControllerMenu.SetBool(_animAbout, true);
     }
 
     public void HideAboutCompany()
     {
+        _hideCompany?.Invoke();
         _backGroundPanel.SetActive(false);
         _animatorControllerMenu.SetBool(_animAbout, false);
     }
@@ -91,11 +97,11 @@ public class MenuController : MonoBehaviour
 
         if (!AlmaSpaceManager.Instance.AudioManager.Music)
         {
-            //_textSoundButton.text = _textOnMusic;
+            _textSoundButton.text = _textOnMusic;
         }
         else
         {
-            //_textSoundButton.text = _textOffMusic;
+            _textSoundButton.text = _textOffMusic;
         }
     }
 
@@ -105,10 +111,10 @@ public class MenuController : MonoBehaviour
 
         AlmaSpaceManager.Instance.ShowMessageBox(new MessageBoxData
         {
-            HeaderCaption = "Подтвердите действие",
-            MainCaption = "Вы действительно хотите выйти в меню?",
+            HeaderCaption = "",
+            MainCaption = "Завершить и выйти в главное меню?",
             CancelCaption = "Отмена",
-            OkCaption = "Да",
+            OkCaption = "Выйти",
             OkAction = AlmaSpaceManager.Instance.ReturnInMenu
         });
     }

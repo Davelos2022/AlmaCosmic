@@ -19,6 +19,7 @@ public class ZvukorecheScreen : MonoBehaviour
     void Start()
     {
         InsalizationsButtons();
+
         _currentIndexCard = _startCard;
         ShowInfo(_currentIndexCard);
     }
@@ -58,6 +59,7 @@ public class ZvukorecheScreen : MonoBehaviour
 
     private async void StartPlay()
     {
+        AlmaSpaceManager.Instance.TypeLesson = TypeLesson.Zvukoreche;
         await AlmaSpaceManager.Instance.PlayVideoViwer(_videosPaths, _currentIndexCard);
     }
 

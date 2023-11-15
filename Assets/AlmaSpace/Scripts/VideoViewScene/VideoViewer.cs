@@ -8,17 +8,19 @@ using VolumeBox.Utils;
 
 public class VideoViewer : MonoBehaviour
 {
+    [Header("Main Settings")]
     [SerializeField] private VideoPlayer _videoPlayer;
     [SerializeField] private Image _fade;
+    [Header("Interface Screen Settings")]
     [SerializeField] private Button _playButton;
     [SerializeField] private Button _closeButton;
     [SerializeField] private Button _soundButton;
     [Space]
-    [SerializeField] private Sprite _play;
-    [SerializeField] private Sprite _paused;
-    [SerializeField] private Sprite _offMusic;
-    [SerializeField] private Sprite _onMusic;
-    [Space]
+    [SerializeField] private Sprite _playSprite;
+    [SerializeField] private Sprite _pausedSprite;
+    [SerializeField] private Sprite _offMusicSprite;
+    [SerializeField] private Sprite _onMusicSprite;
+    [Header("End Screen Video Settings")]
     [SerializeField] private GameObject _endScreen;
     [SerializeField] private Button _replay;
     [SerializeField] private Button _prevVideo;
@@ -26,22 +28,28 @@ public class VideoViewer : MonoBehaviour
     [SerializeField] private Button _exitToMenu;
 
     private bool _isPaused;
-    private string _currentPathVideo;
+    private bool _isPrepare;
+    private int _currentIndexVideo;
 
     private void Awake()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
         _playButton.onClick.AddListener(PausedOrPlayVideo);
-        _closeButton.onClick.AddListener(CloseVideoView);
+        _closeButton.onClick.AddListener(() => CloseVideoView(true));
         _replay.onClick.AddListener(Replay);
         _prevVideo.onClick.AddListener(PrevVideo);
         _nextVideo.onClick.AddListener(NextVideo);
-        _exitToMenu.onClick.AddListener(CloseVideoView);
+        _exitToMenu.onClick.AddListener(() => CloseVideoView(false));
         _soundButton.onClick.AddListener(OnOffMusic);
 
         _videoPlayer.loopPointReached += OnVideoEnd;
         _videoPlayer.prepareCompleted += PrepareCompleted;
 
-        _currentPathVideo = AlmaSpaceManager.Instance.CurrentVideo;
+        MenuController._aboutCompany += PausedVideo;
+        MenuController._hideCompany += PlayVideo;
+
+        _currentIndexVideo = Array.IndexOf(AlmaSpaceManager.Instance.CurrentVideos, AlmaSpaceManager.Instance.CurrentVideo);
 
         StartCoroutine(PreparingForPlayback());
     }
@@ -49,15 +57,18 @@ public class VideoViewer : MonoBehaviour
     private void OnDestroy()
     {
         _playButton.onClick.RemoveListener(PausedOrPlayVideo);
-        _closeButton.onClick.RemoveListener(CloseVideoView);
+        _closeButton.onClick.RemoveListener(() => CloseVideoView(true));
         _replay.onClick.RemoveListener(Replay);
         _prevVideo.onClick.RemoveListener(PrevVideo);
         _nextVideo.onClick.RemoveListener(NextVideo);
-        _exitToMenu.onClick.RemoveListener(CloseVideoView);
+        _exitToMenu.onClick.RemoveListener(() => CloseVideoView(false));
         _soundButton.onClick.RemoveListener(OnOffMusic);
 
         _videoPlayer.loopPointReached -= OnVideoEnd;
         _videoPlayer.prepareCompleted -= PrepareCompleted;
+
+        MenuController._aboutCompany -= PausedVideo;
+        MenuController._hideCompany -= PlayVideo;
     }
 
     //Buttons 
@@ -74,13 +85,13 @@ public class VideoViewer : MonoBehaviour
     private void PausedVideo()
     {
         _videoPlayer.Pause();
-        _playButton.image.sprite = _play;
+        _playButton.image.sprite = _playSprite;
     }
 
     private void PlayVideo()
     {
         _videoPlayer.Play();
-        _playButton.image.sprite = _paused;
+        _playButton.image.sprite = _pausedSprite;
     }
 
     private void OnOffMusic()
@@ -88,39 +99,49 @@ public class VideoViewer : MonoBehaviour
         AlmaSpaceManager.Instance.AudioManager.OnOffMusic();
 
         if (!AlmaSpaceManager.Instance.AudioManager.Music)
-            _soundButton.image.sprite = _offMusic;
+            _soundButton.image.sprite = _offMusicSprite;
         else
-            _soundButton.image.sprite = _onMusic;
+            _soundButton.image.sprite = _onMusicSprite;
     }
 
-    private void CloseVideoView()
+    private void CloseVideoView(bool message)
     {
-        AlmaSpaceManager.Instance.ShowMessageBox(new MessageBoxData
+        if (message)
         {
-            HeaderCaption = "Подтвердите действие",
-            MainCaption = "Вы действительно хотите выйти в меню?",
-            CancelCaption = "Отмена",
-            OkCaption = "Да",
-            OkAction = AlmaSpaceManager.Instance.ReturnInMenu
-        });
+            PausedVideo();
+
+            AlmaSpaceManager.Instance.ShowMessageBox(new MessageBoxData
+            {
+                HeaderCaption = "",
+                MainCaption = "Завершить и выйти в главное меню?",
+                CancelCaption = "Отмена",
+                OkCaption = "Выйти",
+                OkAction = AlmaSpaceManager.Instance.ReturnInMenu,
+                CancelAction = PlayVideo
+            });
+        }
+        else
+        {
+            AlmaSpaceManager.Instance.ReturnInMenu();
+        }
     }
 
     //End Screen
     private void OnVideoEnd(VideoPlayer videoPlayer)
     {
-        int indexVideo = Array.IndexOf(AlmaSpaceManager.Instance.CurrentVideos, _currentPathVideo);
+        if (AlmaSpaceManager.Instance.TypeLesson == TypeLesson.Gymnastick)
+        {
+            if (_currentIndexVideo >= AlmaSpaceManager.Instance.CurrentVideos.Length - 1)
+                _nextVideo.interactable = false;
+            else
+                _nextVideo.interactable = true;
 
-        if (indexVideo >= AlmaSpaceManager.Instance.CurrentVideos.Length - 1)
-            _nextVideo.interactable = false;
-        else
-            _nextVideo.interactable = true;
+            if (_currentIndexVideo <= 0)
+                _prevVideo.interactable = false;
+            else
+                _prevVideo.interactable = true;
+        }
 
-        if (indexVideo <= 0)
-            _prevVideo.interactable = false;
-        else
-            _prevVideo.interactable = true;
-
-        ActivateDeactivateButton(false);
         ActivateDeactivateEndScreen(true);
     }
 
@@ -132,10 +153,10 @@ public class VideoViewer : MonoBehaviour
 
     private void NextVideo()
     {
-        int indexVideo = Array.IndexOf(AlmaSpaceManager.Instance.CurrentVideos, _currentPathVideo);
-        indexVideo++;
+        _currentIndexVideo++;
 
-        _currentPathVideo = AlmaSpaceManager.Instance.CurrentVideos[indexVideo];
+        if (_currentIndexVideo > AlmaSpaceManager.Instance.CurrentVideos.Length - 1)
+            _currentIndexVideo = 0;
 
         ActivateDeactivateEndScreen(false);
         StartCoroutine(PreparingForPlayback());
@@ -143,10 +164,10 @@ public class VideoViewer : MonoBehaviour
 
     private void PrevVideo()
     {
-        int indexVideo = Array.IndexOf(AlmaSpaceManager.Instance.CurrentVideos, _currentPathVideo);
-        indexVideo--;
+        _currentIndexVideo--;
 
-        _currentPathVideo = AlmaSpaceManager.Instance.CurrentVideos[indexVideo];
+        if (_currentIndexVideo < 0)
+            _currentIndexVideo = AlmaSpaceManager.Instance.CurrentVideos.Length - 1;
 
         ActivateDeactivateEndScreen(false);
         StartCoroutine(PreparingForPlayback());
@@ -157,45 +178,43 @@ public class VideoViewer : MonoBehaviour
         _endScreen.SetActive(active);
     }
 
-    private void ActivateDeactivateButton(bool active)
-    {
-        _playButton.interactable = active;
-        _closeButton.interactable = active;
-    }
-
-
     //Preparing Video
     public void PrepareCompleted(VideoPlayer videoPlayer)
     {
-        if (videoPlayer.isPrepared)
-            PlayVideo();
+        PlayVideo();
+        Resources.UnloadUnusedAssets();
     }
 
     private IEnumerator PreparingForPlayback()
     {
-        ActivateDeactivateButton(true);
-
-        float fadeDuration = 1.0f;
-        float alphaFade = 1.0f;
-        float duration = 0.5f;
-
-        Color newColor = _fade.color;
-        newColor.a = alphaFade;
-        _fade.color = newColor;
-
-        _videoPlayer.url = _currentPathVideo;
-        _videoPlayer.Prepare();
-
-        while (!_videoPlayer.isPrepared)
-            yield return null;
-
-        for (float t = 0; t < fadeDuration; t += duration)
+        if (!_isPrepare)
         {
-            alphaFade -= duration;
-            newColor.a = alphaFade;
+            _isPrepare = true;
 
+            float fadeDuration = 1.0f;
+            float alphaFade = 1.0f;
+            float duration = 0.1f;
+
+            Color newColor = _fade.color;
+            newColor.a = alphaFade;
             _fade.color = newColor;
-            yield return null;
+
+            _videoPlayer.url = AlmaSpaceManager.Instance.CurrentVideos[_currentIndexVideo];
+            _videoPlayer.Prepare();
+
+            while (!_videoPlayer.isPrepared)
+                yield return null;
+
+            for (float t = 0; t < fadeDuration; t += duration)
+            {
+                alphaFade -= duration;
+                newColor.a = alphaFade;
+
+                _fade.color = newColor;
+                yield return null;
+            }
+
+            _isPrepare = false;
         }
     }
 }

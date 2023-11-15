@@ -1927,10 +1927,10 @@ MonoBehaviour:
   _playButton: {fileID: 1049059561}
   _closeButton: {fileID: 492426674}
   _soundButton: {fileID: 117625476}
-  _play: {fileID: 21300000, guid: 74db2b4e67d56724c9ae41cc4e07133b, type: 3}
-  _paused: {fileID: 21300000, guid: aae6251ba84803e4281d5c4d931e8a9e, type: 3}
-  _offMusic: {fileID: 21300000, guid: 14f17f3207484ac4d9f2316e5cd64fb2, type: 3}
-  _onMusic: {fileID: 21300000, guid: d9486cbd33f68fa4bbc4fe4b4b88b5ee, type: 3}
+  _playSprite: {fileID: 21300000, guid: 74db2b4e67d56724c9ae41cc4e07133b, type: 3}
+  _pausedSprite: {fileID: 21300000, guid: aae6251ba84803e4281d5c4d931e8a9e, type: 3}
+  _offMusicSprite: {fileID: 21300000, guid: 14f17f3207484ac4d9f2316e5cd64fb2, type: 3}
+  _onMusicSprite: {fileID: 21300000, guid: d9486cbd33f68fa4bbc4fe4b4b88b5ee, type: 3}
   _endScreen: {fileID: 1937194053}
   _replay: {fileID: 568828085}
   _prevVideo: {fileID: 1641904995}
