@@ -1024,7 +1024,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 93.8, y: -104.9}
+  m_AnchoredPosition: {x: 121, y: -130}
   m_SizeDelta: {x: 202, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &115184914
@@ -2787,7 +2787,6 @@ GameObject:
   - component: {fileID: 529359070}
   - component: {fileID: 529359073}
   - component: {fileID: 529359072}
-  - component: {fileID: 529359071}
   - component: {fileID: 529359075}
   - component: {fileID: 529359074}
   m_Layer: 5
@@ -2817,27 +2816,6 @@ RectTransform:
   m_AnchoredPosition: {x: -10.121094, y: -10.120972}
   m_SizeDelta: {x: 141.699, y: 128.204}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &529359071
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 529359069}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dd4633bc74e6cfa4999dfd78fb9d6f9a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &529359072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3152,8 +3130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 295.8, y: -104.899994}
-  m_SizeDelta: {x: 202, y: 220}
+  m_AnchoredPosition: {x: 304.06223, y: -90.79431}
+  m_SizeDelta: {x: 131, y: 149.5886}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &606176195
 MonoBehaviour:
@@ -7586,6 +7564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1210113442}
+  - component: {fileID: 1210113443}
   m_Layer: 5
   m_Name: ClickTypeNavigation
   m_TagString: Untagged
@@ -7610,11 +7589,37 @@ RectTransform:
   m_Father: {fileID: 897201648}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 347.01215, y: -105.67169}
+  m_SizeDelta: {x: 694.0244, y: 211.3433}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1210113443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210113441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 20
+    m_Right: 0
+    m_Top: 20
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: -300
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1221662509
 GameObject:
   m_ObjectHideFlags: 0
@@ -9882,7 +9887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5b5b116286aa044880104eaa4edf53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _type: 1
+  _type: 0
   _startScreenIndex: 1
   _screens:
   - Screen: {fileID: 633772654}
@@ -9933,8 +9938,12 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  _isFade: 1
+  _fadeImage: {fileID: 529359072}
+  _fadeOutDuration: 0.422
   _homeButton: {fileID: 115184914}
-  _fafeAnimator: {fileID: 529359071}
+  _isPrevScreenButton: 0
+  _prevScreenButton: {fileID: 606176195}
   _containerScreen: {fileID: 2003672145}
   _navigationButton: 1
   _previousScreenButton: {fileID: 506498521}
@@ -12574,7 +12583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2003672145}
   m_Layer: 5
-  m_Name: Container
+  m_Name: ContainerScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
