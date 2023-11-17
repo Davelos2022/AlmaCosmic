@@ -11,7 +11,6 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         _audioSourceMusic.clip = _ostMusic[Random.Range(0, _ostMusic.Length - 1)];
-        _audioSourceMusic.Play();
     }
 
     public void ClickSound()

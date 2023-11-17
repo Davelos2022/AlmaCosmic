@@ -94,14 +94,22 @@ public class VideoViewer : MonoBehaviour
         _playButton.image.sprite = _pausedSprite;
     }
 
+
+
     private void OnOffMusic()
     {
         AlmaSpaceManager.Instance.AudioManager.OnOffMusic();
 
         if (!AlmaSpaceManager.Instance.AudioManager.Music)
+        {
             _soundButton.image.sprite = _offMusicSprite;
+            _videoPlayer.SetDirectAudioMute(0, true);
+        }
         else
+        {
             _soundButton.image.sprite = _onMusicSprite;
+            _videoPlayer.SetDirectAudioMute(0, false);
+        }
     }
 
     private void CloseVideoView(bool message)
@@ -117,7 +125,7 @@ public class VideoViewer : MonoBehaviour
                 CancelCaption = "Отмена",
                 OkCaption = "Выйти",
                 OkAction = AlmaSpaceManager.Instance.ReturnInMenu,
-                CancelAction = PlayVideo
+                CancelAction =  _isPaused ? null : PlayVideo
             });
         }
         else

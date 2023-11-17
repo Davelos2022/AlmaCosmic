@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "916836776914",
+    "project_id": "sensoroom-d0174",
+    "storage_bucket": "sensoroom-d0174.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916836776914:android:71401eb57205ce6c99e60b",
+        "android_client_info": {
+          "package_name": "com.ALMA.Sensoroom"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6YwAb55uTy6m6fYCVa2YH81I3TbV2e9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
